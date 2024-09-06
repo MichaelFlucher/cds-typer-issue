@@ -1,24 +1,11 @@
 // This is an automatically generated file. Please do not change its contents manually!
+import * as _SampleService_Teams from './Teams';
 import * as __ from './../_';
 export default { name: 'SampleService' }
-export type Teams = {};
-export function _TeamAspect<TBase extends new (...args: any[]) => object>(Base: TBase) {
-  return class Team extends Base {
-        declare ID?: string;
-        declare members?: __.Composition.of.many<__.DeepRequired<SampleService.Team>['members']>;
-      declare static readonly actions: Record<never, never>
-  };
-}
-export class Team extends _TeamAspect(__.Entity) {}
-Object.defineProperty(Team, 'name', { value: 'SampleService.Teams' })
-Object.defineProperty(Team, 'is_singular', { value: true })
-export class Teams extends Array<Team> {$count?: number}
-Object.defineProperty(Teams, 'name', { value: 'SampleService.Teams' })
-
 export function _UserAspect<TBase extends new (...args: any[]) => object>(Base: TBase) {
   return class User extends Base {
         declare ID?: string;
-        declare teams?: __.Association.to.many<__.DeepRequired<SampleService.Team>['members']>;
+        declare teams?: __.Association.to.many<_SampleService_Teams.members>;
       declare static readonly actions: Record<never, never>
   };
 }
